@@ -1,0 +1,26 @@
+p {
+    font-size: 12px;
+    color: #333;
+}
+
+#overview {
+    background-color: #c1bfbf;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.section-header {
+    font-size: 22px;
+    color: #d17676;
+    margin-bottom: 7px;
+}
+
+nav a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    color: #000dff;
+    text-decoration: underline;
+}
