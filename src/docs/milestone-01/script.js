@@ -1,9 +1,9 @@
 // Define an array of image URLs
 const images = [
-    "pictures/antara-pic.jpg",
-    "pictures/aaryan-pic.jpg",
-    "pictures/arvind-pic.jpg",
-    "pictures/devina-pic.jpg"
+    "pictures/frame1.jpg",
+    "pictures/frame2.jpg",
+    "pictures/frame3.jpg",
+    "pictures/frame4.jpg"
 ];
 
 // Initialize current image index
