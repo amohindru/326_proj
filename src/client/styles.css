@@ -29,4 +29,11 @@ body {
   button:hover {
     background-color: darkred;
   }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
   
