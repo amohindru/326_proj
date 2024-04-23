@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodShare</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="help.html">Help</a></li>
+    <li><a href="profile.html">Profile</a></li>
+  </ul>
+</nav>
+
+<!-- Home Page -->
+<div id="home">
+  <h1>FoodShare</h1>
+  <form id="search-form">
+    <label for="location">Enter your location:</label>
+    <input type="text" id="location" name="location">
+    <label for="max-distance">Select Max Distance:</label>
+    <select id="max-distance" name="max-distance">
+      <option value="10">10 miles</option>
+      <option value="20">20 miles</option>
+      <option value="50">50 miles</option>
+    </select>
+    <button type="submit">Search</button>
+  </form>
+</div>
+
+<!-- Results Page -->
+<div id="results" style="display: none;">
+  <h2>All results within a <span id="mile-radius">x</span> mile radius:</h2>
+  <p>Click on a result to learn more!</p>
+  <ul id="results-list"></ul>
+</div>
+
+<!-- Detail Page -->
+<div id="detail" style="display: none;">
+  <h2 id="location-name">Location Name</h2>
+  <p id="city-state">(City, State)</p>
+  <p id="phone-number">(XXX) XXX-XXXX</p>
+  <p id="hours-website">Hours available <a href="#" id="website-url">website url</a></p>
+  <div id="about-location">About this location</div>
+</div>
+
+<!-- About Page -->
+<div id="about" style="display: none;">
+  <h2>About</h2>
+  <p>FoodShare is an innovative web application aimed at reducing food insecurity by creating a network that connects individuals with local food resources. It's designed to facilitate access to food banks, surplus food from businesses, and community gardens, ensuring those in need can find and utilize available food resources efficiently.</p>
+</div>
+
+<!-- Help Page -->
+<div id="help" style="display: none;">
+  <!-- Content for help will go here -->
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
