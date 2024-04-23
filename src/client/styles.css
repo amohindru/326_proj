@@ -1,39 +1,140 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-  }
-  
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Navigation Bar Styles */
+nav {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #f4f4f4;
+  text-decoration: underline;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #e8491d;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+/* Home Page Styles */
+#home h1 {
+  color: #333;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 40px 0;
+}
+
+#search-form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#search-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#search-form input,
+#search-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Results Page Styles */
+#results {
+  padding: 20px;
+}
+
+#results h2 {
+  margin-bottom: 20px;
+}
+
+#results-list li {
+  background: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+#results-list li:hover {
+  background: #e8491d;
+  color: #fff;
+}
+
+/* About Page Styles */
+#about {
+  padding: 20px;
+}
+
+/* Help Page Styles */
+#help {
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  button {
-    background-color: red;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: darkred;
+    flex-direction: column;
+    text-align: center;
   }
 
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+  nav ul li {
+    margin-bottom: 10px;
   }
-  
+}
