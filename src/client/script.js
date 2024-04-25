@@ -1,7 +1,8 @@
-// Initialize a new PouchDB instance
 var db = new PouchDB('resultsDB');
 
-// Function to handle form submission on index.html
+/**
+ * Sets up event listener for search form
+ */
 function handleFormSubmission() {
   var searchForm = document.getElementById('search-form');
   if (searchForm) {
@@ -14,7 +15,11 @@ function handleFormSubmission() {
   }
 }
 
-// Function to display results on results.html
+/**
+ * Displays search results by location and distance and using PouchDB
+ * @param {string} location - The location to display results for
+ * @param {number} maxDistance - The maximum distance for searching
+ */
 function displayResults(location, maxDistance) {
   let resultsList = document.getElementById('results-list');
   if (!resultsList) return; // Exit if resultsList is not part of the current DOM
@@ -36,7 +41,10 @@ function displayResults(location, maxDistance) {
   });
 }
 
-// Update the results list UI
+/**
+ * Updates the UI with a list of results
+ * @param {Array<string>} results - Array of result names to display
+ */
 function updateResultsList(results) {
   let resultsList = document.getElementById('results-list');
   resultsList.innerHTML = ''; // Clear previous results
@@ -51,7 +59,10 @@ function updateResultsList(results) {
   });
 }
 
-// Save results to PouchDB
+/**
+ * Saves search results to PouchDB
+ * @param {Array<string>} results - Array of results to save
+ */
 function saveResults(results) {
   // Save the current state of results
   db.put({
@@ -74,7 +85,9 @@ function saveResults(results) {
   });
 }
 
-// Function to show details on detail.html
+/**
+ * Displays details for a specific result
+ */
 function showDetail() {
   let params = new URLSearchParams(window.location.search);
   let resultName = params.get('resultName');
