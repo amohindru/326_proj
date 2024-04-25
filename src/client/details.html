@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detail Page - FoodShare</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/pouchdb@7.2.2/dist/pouchdb.min.js"></script>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="help.html">Help</a></li>
+  </ul>
+</nav>
+
+<!-- Detail Page -->
+<div class="container">
+<div id="details">
+    <h1 id="location-name">Location Name</h1>
+    <div class="info-box">
+      <p id="city-state">(City, State)</p>
+      <p id="phone-number">(XXX) XXX-XXXX</p>
+    </div>
+    <div class="info-box">
+      <p id="hours-website">Hours available <a href="#" id="website-url">website url</a></p>
+    </div>
+    <div class="info-box large">
+      <div id="about-location">About this location</div>
+    </div>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

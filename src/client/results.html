@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FoodShare</title>
+<title>Search Results - FoodShare</title>
 <link rel="stylesheet" href="styles.css">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/pouchdb@7.2.2/dist/pouchdb.min.js"></script>
 <body>
 
 <!-- Navigation Bar -->
@@ -17,11 +18,15 @@
   </ul>
 </nav>
 
-<div id="results" style="display: none;">
-    <h2>All results within a <span id="mile-radius">x</span> mile radius:</h2>
-    <p>Click on a result to learn more!</p>
-    <ul id="results-list"></ul>
+<!-- Results Page -->
+<div class="container">
+  <h2>All results within a <span id="mile-radius">x</span> mile radius:</h2>
+  <p>Click on a result to learn more!</p>
+  <ul id="results-list">
+      <!-- Results will be loaded here by JavaScript -->
+  </ul>
 </div>
+
 
 <script src="script.js"></script>
 </body>

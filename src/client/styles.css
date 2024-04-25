@@ -98,37 +98,149 @@ nav a:hover {
 /* Results Page Styles */
 #results {
   padding: 20px;
+  text-align: center;
 }
 
 #results h2 {
   margin-bottom: 20px;
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#results-list {
+  list-style-type: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 #results-list li {
-  background: #fff;
+  background-color: #e7e7e7;
+  border: 1px solid #c3c3c3;
+  margin-bottom: 10px;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
 }
 
 #results-list li:hover {
-  background: #e8491d;
-  color: #fff;
+  background-color: #d0d0d0;
+}
+
+#mile-radius {
+  font-style: italic;
 }
 
 /* About Page Styles */
 #about {
-  padding: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+#about .content {
+  margin: auto;
+  padding: 10px;
+}
+
+#about p, #about h1, #about h2 {
+  font-size: 1.1em; 
+  color: #333;
+  margin: 10px auto;
+}
+
+#about h1 {
+  margin-top: 0;
+  font-size: 2em;
+}
+
+#about h2 {
+  font-size: 1.5em;
+}
+
+#about img {
+  display: block; 
+  margin: 10px auto;
+  width: 80%;
+  max-width: 400px;
 }
 
 /* Help Page Styles */
 #help {
   padding: 20px;
+  text-align: center;
+}
+
+#help p, #help h1, #help h2 {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Detail Page Styles */
+#detail {
+  padding: 20px;
+  text-align: center;
+}
+
+#detail p, #detail h1{
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.info-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.info-box.large {
+  height: 200px;
+}
+
+#location-name {
+  margin: 20px 0;
+  font-size: 2.5rem;
+}
+
+.info-box p,
+.info-box a {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.info-box a {
+  color: #333;
+  text-decoration: none;
+}
+
+.info-box a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
   nav ul {
     flex-direction: column;
     text-align: center;

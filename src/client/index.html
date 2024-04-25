@@ -6,6 +6,7 @@
 <title>FoodShare</title>
 <link rel="stylesheet" href="styles.css">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/pouchdb@7.2.2/dist/pouchdb.min.js"></script>
 <body>
 
 <!-- Navigation Bar -->
@@ -33,36 +34,19 @@
   </form>
 </div>
 
-<!-- Results Page -->
-<div id="results" style="display: none;">
-  <h2>All results within a <span id="mile-radius">x</span> mile radius:</h2>
-  <p>Click on a result to learn more!</p>
-  <ul id="results-list"></ul>
-</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var searchForm = document.getElementById('search-form');
+    if(searchForm) {
+      searchForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        var location = document.getElementById('location').value;
+        var maxDistance = document.getElementById('max-distance').value;
+        window.location.href = 'results.html?location=' + encodeURIComponent(location) + '&maxDistance=' + maxDistance;
+      });
+    }
+  });
+</script>
 
-<!-- Detail Page -->
-<div id="detail" style="display: none;">
-  <h2 id="location-name">Location Name</h2>
-  <p id="city-state">(City, State)</p>
-  <p id="phone-number">(XXX) XXX-XXXX</p>
-  <p id="hours-website">Hours available <a href="#" id="website-url">website url</a></p>
-  <div id="about-location">About this location</div>
-</div>
-
-<!-- About Page -->
-<div id="about" style="display: none;">
-  <h2>About</h2>
-  <p>FoodShare is an innovative web application aimed at reducing food insecurity by creating a network 
-    that connects individuals with local food resources. It's designed to facilitate access to food banks, 
-    surplus food from businesses, and community gardens, ensuring those in need can find and 
-    utilize available food resources efficiently.</p>
-</div>
-
-<!-- Help Page -->
-<div id="help" style="display: none;">
-  <!-- Content for help will go here -->
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
