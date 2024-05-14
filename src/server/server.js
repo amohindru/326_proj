@@ -46,3 +46,21 @@ app.get('/api/results', async (req, res) => {
     }
   });
 
+/**
+ * adds new result to database
+ * @route POST /api/results
+ * @param {Object} req.body - result to add
+ * @returns {Object} 200 - added result
+ * @returns {Error} 500 - server error
+ */
+app.post('/api/results', async (req, res) => {
+    try {
+      const result = req.body;
+      const response = await db.put(result);
+      res.json(response);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+
+  
