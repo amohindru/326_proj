@@ -98,3 +98,9 @@ app.delete('/api/results/:id', async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   });
+
+//port is set up to host server for application
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
