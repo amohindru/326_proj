@@ -6,10 +6,8 @@
 <title>FoodShare</title>
 <link rel="stylesheet" href="styles.css">
 </head>
-<script src="https://cdn.jsdelivr.net/npm/pouchdb@7.2.2/dist/pouchdb.min.js"></script>
 <body>
 
-<!-- Navigation Bar -->
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
@@ -18,12 +16,11 @@
   </ul>
 </nav>
 
-<!-- Home Page -->
-<div id="home">
+<div class="container" id="home">
   <h1>FoodShare</h1>
   <form id="search-form">
     <label for="location">Enter your location:</label>
-    <input type="text" id="location" name="location">
+    <input type="text" id="location" name="location" placeholder="Address, city, or ZIP code">
     <label for="max-distance">Select Max Distance:</label>
     <select id="max-distance" name="max-distance">
       <option value="10">10 miles</option>
@@ -34,19 +31,7 @@
   </form>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var searchForm = document.getElementById('search-form');
-    if(searchForm) {
-      searchForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        var location = document.getElementById('location').value;
-        var maxDistance = document.getElementById('max-distance').value;
-        window.location.href = 'results.html?location=' + encodeURIComponent(location) + '&maxDistance=' + maxDistance;
-      });
-    }
-  });
-</script>
-
+<script src="https://cdn.jsdelivr.net/npm/pouchdb@7.2.2/dist/pouchdb.min.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
