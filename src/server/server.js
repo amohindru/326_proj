@@ -34,21 +34,26 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.get('/api/results', async (req, res) => {
     const { location, maxDistance } = req.query;
     try {
-      const geocodeResponse = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=${GOOGLE_MAPS_API_KEY}`);
-      const geocodeData = await geocodeResponse.json();
-      const { lat, lng } = geocodeData.results[0].geometry.location;
+        // Fetch geocode data from Google Maps API
+        const geocodeResponse = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=${GOOGLE_MAPS_API_KEY}`);
+        const geocodeData = await geocodeResponse.json();
+        const { lat, lng } = geocodeData.results[0].geometry.location;
   
-      const placesResponse = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=${maxDistance * 1609.34}&keyword=food bank&key=${GOOGLE_MAPS_API_KEY}`);
-      const placesData = await placesResponse.json();
+        // Fetch nearby food banks using Google Places API
+        const placesResponse = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=${maxDistance * 1609.34}&keyword=food bank&key=${GOOGLE_MAPS_API_KEY}`);
+        const placesData = await placesResponse.json();
   
-      const results = placesData.results.map(place => ({
+        // Map results to a simpler format
+        const results = placesData.results.map(place => ({
         name: place.name,
         address: place.vicinity,
         place_id: place.place_id
       }));
-  
+      // Send back the results
       res.json(results);
-    } catch (error) {
+    } 
+    // Handle errors by sending a server error status
+    catch (error) {
       res.status(500).json({ error: error.message });
     }
   });
@@ -106,7 +111,7 @@ app.delete('/api/results/:id', async (req, res) => {
     }
   });
 
-//port is set up to host server for application
+// Set up the server to listen on a specified port
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
