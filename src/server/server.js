@@ -6,6 +6,7 @@ import fetch from 'node-fetch';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
+// Resolve directory and file paths
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
