@@ -10,8 +10,13 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// Create an Express application
 const app = express();
+
+//
 const db = new PouchDB('http://localhost:5984/foodshare');
+
+// API key for Google Maps API
 const GOOGLE_MAPS_API_KEY = 'AIzaSyD4GpAyh_HLnQ_qW2Vdf8_RhPqmHTCFHX4';
 
 app.use(bodyParser.json());
