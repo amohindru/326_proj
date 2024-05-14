@@ -13,12 +13,13 @@ const __dirname = dirname(__filename);
 // Create an Express application
 const app = express();
 
-//
+// Connect to PouchDB database
 const db = new PouchDB('http://localhost:5984/foodshare');
 
 // API key for Google Maps API
 const GOOGLE_MAPS_API_KEY = 'AIzaSyD4GpAyh_HLnQ_qW2Vdf8_RhPqmHTCFHX4';
 
+// Set up the app to read JSON data from requests and to serve files directly from the 'client' folder
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client')));
 
