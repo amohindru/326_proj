@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "foodshare",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -34,11 +34,18 @@
     "milestone-01": "http-server src/docs/milestone-01 -p 3000 -c-1 -o -s",
     "milestone-02": "http-server src/client -p 3000 -c-1 -o -s",
     "validate": "html-validate 'src/**/*.html'",
-    "prettier": "prettier src —write"
+    "prettier": "prettier src —write",
+    "start": "node src/server/server.js & opn http://localhost:3000"
   },
   "devDependencies": {
     "html-validate": "^8.18.1",
     "http-server": "^14.1.1",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "opn-cli": "^4.0.0" 
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "pouchdb": "^7.2.2"
   }
 }
