@@ -81,4 +81,20 @@ app.put('/api/results/:id', async (req, res) => {
     }
   });
 
-
+/**
+ * deletes result from database
+ * @route DELETE /api/results/:id
+ * @param {string} req.params.id - ID of the result to delete
+ * @returns {Object} 200 - the deletion response
+ * @returns {Error} 500 - server error
+ */
+app.delete('/api/results/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const result = await db.get(id);
+      const response = await db.remove(result);
+      res.json(response);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
