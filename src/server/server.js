@@ -63,4 +63,22 @@ app.post('/api/results', async (req, res) => {
     }
   });
 
-  
+/**
+ * update a result in the database
+ * @route PUT /api/results/:id
+ * @param {string} req.params.id - ID of result to update
+ * @param {Object} req.body - the updated result data
+ * @returns {Object} 200 - the updated result
+ * @returns {Error} 500 - server error
+ */
+app.put('/api/results/:id', async (req, res) => {
+    try {
+      const result = req.body;
+      const response = await db.put(result);
+      res.json(response);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+
+
